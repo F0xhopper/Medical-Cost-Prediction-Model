@@ -12,7 +12,7 @@ df = pd.read_csv("./data/insurance.csv")
 df.head()
 
 # %% Shape and types
-print(df.shape)
+print(df)
 df.info()
 
 # %% Summary statistics
