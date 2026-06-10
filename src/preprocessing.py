@@ -7,7 +7,9 @@ def load_and_preprocess(data_path: str = "data/insurance.csv"):
     df = pd.read_csv(data_path)
 
     df["sex"] = df["sex"].map({"female": 0, "male": 1})
+    df["age_squared"] = df["age"] ** 2
     df["smoker"] = df["smoker"].map({"no": 0, "yes": 1})
+    df["smoker_bmi"] = df["smoker"] * df["bmi"]
 
     df = pd.get_dummies(df, columns=["region"], drop_first=True)
 
