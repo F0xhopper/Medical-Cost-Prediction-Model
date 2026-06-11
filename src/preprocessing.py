@@ -10,6 +10,8 @@ def load_and_preprocess(data_path: str = "data/insurance.csv"):
     df["age_squared"] = df["age"] ** 2
     df["smoker"] = df["smoker"].map({"no": 0, "yes": 1})
     df["smoker_bmi"] = df["smoker"] * df["bmi"]
+    df["smoker_age"] = df["smoker"] * df["age"]
+    df["age_bmi"] = df["age"] * df["bmi"]
 
     df = pd.get_dummies(df, columns=["region"], drop_first=True)
 
